@@ -15,11 +15,13 @@ export default class Host extends Component {
   componentDidMount(){
     axios.get(`/api/user/${this.props.match.params.id}`, { withCredentials: true })
       .then((res) => {
+          console.log(3333, res)
         this.setState({
           userInfo: res.data[0]
         })
         axios.get(`/api/user/homes/${this.props.match.params.id}`, { withCredentials: true })
          .then((res) => {
+             console.log(3332223, res)
            this.setState({
              userProperties: res.data
            })

@@ -33,7 +33,7 @@ export default class Login extends Component {
       axios.get(`/api/auth/login/${this.state.userData.username}/${this.state.userData.password}`, {
          withCredentials: true
        }).then( res => {
-         console.log('res', res.data.user_id);
+         console.log('res', res.data);
          if (res.data.user_id > 0){
            this.props.history.push(`/host/${res.data.user_id}`);
          } else {
